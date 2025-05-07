@@ -18,7 +18,11 @@
         android:id="@+id/mi_barberia"
         android:name="com.faixeda.barbereasy.home.fragments.barber.MiBarberia"
         android:label="fragment_mi_barberia"
-        tools:layout="@layout/fragment_mi_barberia" />
+        tools:layout="@layout/fragment_mi_barberia" >
+        <action
+            android:id="@+id/action_mi_barberia_to_crear_barberia"
+            app:destination="@id/crear_barberia" />
+    </fragment>
     <fragment
         android:id="@+id/perfil"
         android:name="com.faixeda.barbereasy.home.fragments.Perfil"

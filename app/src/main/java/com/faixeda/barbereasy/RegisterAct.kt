@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.faixeda.barbereasy.databinding.ActivityRegisterBinding
 import com.faixeda.barbereasy.home.HomeActivity
+import com.faixeda.barbereasy.home.HomeActivityBarber
 import com.faixeda.barbereasy.home.viewmodels.UserViewModel
 
 class RegisterAct : AppCompatActivity() {
@@ -45,9 +46,17 @@ class RegisterAct : AppCompatActivity() {
             ).observe(this, Observer { result ->
                 result.fold(
                     onSuccess = {
-                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, HomeActivity::class.java))
-                        finish()
+                        if (isBarber){
+                            startActivity(
+                                Intent(this, HomeActivityBarber::class.java)
+                            )
+                            finish()
+                        } else {
+                            startActivity(
+                                Intent(this, HomeActivity::class.java)
+                            )
+                            finish()
+                        }
                     },
                     onFailure = { e ->
                         Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()

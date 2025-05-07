@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faixeda.barbereasy.R
 import com.faixeda.barbereasy.databinding.FragmentMiBarberiaBinding
@@ -36,14 +37,20 @@ class MiBarberia : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Configura RecyclerView
+        // 1) Botón "Modificar horario"
+        binding.btnModifySchedule.setOnClickListener {
+            // Navega al fragmento de crear/modificar horario
+            findNavController().navigate(R.id.action_mi_barberia_to_crear_barberia)
+        }
+
+        // 2) Configura RecyclerView de reservas
         adapter = BarberReservationAdapter(emptyList())
         binding.rvReservations.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@MiBarberia.adapter
         }
 
-        // Carga reservas del barbero
+        // 3) Carga reservas del barbero
         val barberId = auth.currentUser?.uid ?: return
         db.collection("barberos")
             .document(barberId)

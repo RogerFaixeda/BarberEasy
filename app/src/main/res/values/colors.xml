@@ -19,4 +19,5 @@
     <color name="colorPrimary">#6200EE</color>
     <!-- Color de fondo de pantallas -->
     <color name="colorBackground">#F5F5F5</color>
+    <color name="gray_300">#E0E0E0</color>
 </resources>
