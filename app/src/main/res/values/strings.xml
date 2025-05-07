@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name"><b>BarberEasy</b></string>
+    <string name="beguda">Beguda</string>
+    <string name="menjars">Menjars</string>
+    <string name="postres">Postres</string>
+    <string name="pagament">Pagament</string>
+    <string name="inicia_sessi_amb_el_teu_usuari">Iniciar sessió amb el teu usuari</string>
+    <string name="nombre">Nombre</string>
+    <string name="contrassenya">contrassenya</string>
+    <string name="iniciar_sessio">Iniciar sessió</string>
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="registrar_se">Registrar-se</string>
+    <string name="item">item</string>
+    <string name="_0">0</string>
+    <string name="pagar">PAGAR</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="afegir">Afegir</string>
+    <string name="dni">DNI</string>
+    <string name="edat">Edat</string>
+    <string name="crear_una"><u>Crear una</u></string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="email">Email</string>
+    <string name="todav_a_no_tienes_una_cuenta">¿Todavía no tienes una cuenta?</string>
+    <string name="password">Password</string>
+    <string name="registro"><b>Registro</b></string>
+    <string name="apellidos">Apellidos</string>
+    <string name="ya_tienes_una_cuenta"><u>Ya tienes una cuenta?</u></string>
+    <string name="buscar">Buscar</string>
+    <string name="precio"><b>Precio (€):</b></string>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/select_ciudad">
+
+    <fragment
+        android:id="@+id/select_ciudad"
+        android:name="com.faixeda.barbereasy.home.fragments.cliente.SelectCiudad"
+        android:label="fragment_select_ciudad"
+        tools:layout="@layout/fragment_select_ciudad" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_select_ciudad_to_select_barbero"
+            app:destination="@id/select_barbero" />
+    </fragment>
+    <fragment
+        android:id="@+id/select_barbero"
+        android:name="com.faixeda.barbereasy.home.fragments.cliente.SelectBarbero"
+        android:label="fragment_select_barbero"
+        tools:layout="@layout/fragment_select_barbero" >
+        <action
+            android:id="@+id/action_select_barbero_to_home_barbero"
+            app:destination="@id/home_barbero" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_barbero"
+        android:name="com.faixeda.barbereasy.home.fragments.cliente.HomeBarbero"
+        android:label="fragment_home_barbero"
+        tools:layout="@layout/fragment_home_barbero" >
+        <argument
+            android:name="barberId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_home_barbero_to_reserva_barbero"
+            app:destination="@id/reserva_barbero" />
+    </fragment>
+    <fragment
+        android:id="@+id/reserva_barbero"
+        android:name="com.faixeda.barbereasy.home.fragments.cliente.ReservaBarbero"
+        android:label="fragment_reserva_barbero"
+        tools:layout="@layout/fragment_reserva_barbero" >
+        <argument android:name="barberId"    app:argType="string" />
+        <argument android:name="barberName"  app:argType="string" />
+        <argument android:name="barberPrice" app:argType="string" />
+        <argument android:name="timeSlot"    app:argType="string" />
+        <action
+            android:id="@+id/action_reserva_barbero_to_reserva_realizada"
+            app:destination="@id/reserva_realizada" />
+    </fragment>
+    <fragment
+        android:id="@+id/reserva_realizada"
+        android:name="com.faixeda.barbereasy.home.fragments.cliente.ReservaRealizada"
+        android:label="fragment_reserva_realizada"
+        tools:layout="@layout/fragment_reserva_realizada" >
+        <argument
+            android:name="barberName"
+            app:argType="string" />
+        <argument
+            android:name="barberPrice"
+            app:argType="string" />
+        <argument
+            android:name="timeSlot"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_reserva_realizada_to_select_ciudad"
+            app:destination="@id/select_ciudad" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.faixeda.barbereasy.home.fragments.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>

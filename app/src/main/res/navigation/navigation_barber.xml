@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_barber"
+    app:startDestination="@id/crear_barberia">
+
+    <fragment
+        android:id="@+id/crear_barberia"
+        android:name="com.faixeda.barbereasy.home.fragments.barber.CrearBarberia"
+        android:label="fragment_crear_barberia"
+        tools:layout="@layout/fragment_crear_barberia" >
+        <action
+            android:id="@+id/action_crear_barberia_to_mi_barberia"
+            app:destination="@id/mi_barberia" />
+    </fragment>
+    <fragment
+        android:id="@+id/mi_barberia"
+        android:name="com.faixeda.barbereasy.home.fragments.barber.MiBarberia"
+        android:label="fragment_mi_barberia"
+        tools:layout="@layout/fragment_mi_barberia" />
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.faixeda.barbereasy.home.fragments.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+</navigation>
